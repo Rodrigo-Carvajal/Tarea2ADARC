@@ -111,7 +111,6 @@ def bubble(ArrayOrdenadoBubble):
 finBubble = time.time()
 print("El tiempo que tomó ordenar el arreglo de tamaño ",n," mediante el algoritmo BUBBLE SORT fue de ", finBubble-inicioBubble)
 
-
 ################ RADIX SORT ################
 
 ArrayOrdenadoRadix = Array
@@ -122,7 +121,6 @@ def radix(ArrayOrdenadoRadix):
 finRadix = time.time()
 print("El tiempo que tomó ordenar el arreglo de tamaño ",n," mediante el algoritmo RADIX SORT fue de ", finRadix-inicioRadix)
 
-
 ################ HEAP SORT ################
 
 ArrayOrdenadoHeap = Array
@@ -132,7 +130,6 @@ def heap(ArrayOrdenadoHeap):
     
 finHeap = time.time()
 print("El tiempo que tomó ordenar el arreglo de tamaño ",n," mediante el algoritmo HEAP SORT fue de ", finHeap-inicioHeap)
-
 
 ################ INSERTION SORT ################
 

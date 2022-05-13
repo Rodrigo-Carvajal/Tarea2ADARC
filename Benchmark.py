@@ -5,20 +5,18 @@
 import random
 import time
 
-n=100
+n=1000
 Array = []
 
 #Generar arreglo de tamaño n con enteros aleatorios
 for i in range(n):
-    Array.append(random.randint(1,100))
+    Array.append(random.randint(1,10000000))
 
-#for i in range(n):
- #   print(Array[i])
+#print("El arreglo a ordenar es:")
+#print(Array)
 
 ################ MERGE SORT ################
-
 ArrayOrdenadoMerge = Array
-inicioMerge = time.time()
 
 def merge(ArrayOrdenadoMerge):
     if len(ArrayOrdenadoMerge) > 1:
@@ -60,15 +58,15 @@ def merge(ArrayOrdenadoMerge):
             j += 1
             k += 1
 
+inicioMerge = time.time()
 merge(ArrayOrdenadoMerge)
 finMerge = time.time()
+#print("La lista ordenada quedó así:")
+#print(ArrayOrdenadoMerge)
 print("El tiempo que tomó ordenar el arreglo de tamaño ", n ," mediante el algoritmo MERGE SORT fue de ", finMerge-inicioMerge)
-print("La lista ordenada quedó así:")
-print(ArrayOrdenadoMerge)
 
 ################ QUICK SORT ################
 ArrayOrdenadoQuick = Array
-inicioQuick = time.time()
 
 def quick(ArrayOrdenadoQuick):
     izquierda = []
@@ -83,20 +81,19 @@ def quick(ArrayOrdenadoQuick):
                 centro.append(i)
             elif i > pivote:
                 derecha.append(i)
-        #print(izquierda+["-"]+centro+["-"]+derecha)
-        return quick(izquierda)+centro+quick(derecha)
+        return  print(izquierda+["-"]+centro+["-"]+derecha)
     else:
-      return ArrayOrdenadoQuick
+        return ArrayOrdenadoQuick
 
+inicioQuick = time.time()
 quick(ArrayOrdenadoQuick)
-finQuick = time.time()
+finQuick = time.time() 
 print("El tiempo que tomó ordenar el arreglo de tamaño ",n," mediante el algoritmo QUICK SORT fue de ", finQuick-inicioQuick)
-print("La lista ordenada quedó así:")
-print(ArrayOrdenadoQuick)
+#print("La lista ordenada quedó así:")
+#print(ArrayOrdenadoQuick)
 
 ################ BUBBLE SORT ################
 ArrayOrdenadoBubble = Array
-inicioBubble = time.time()
 
 def bubble(ArrayOrdenadoBubble):
     # loop to access each array element
@@ -114,15 +111,15 @@ def bubble(ArrayOrdenadoBubble):
                 ArrayOrdenadoBubble[j] = ArrayOrdenadoBubble[j+1]
                 ArrayOrdenadoBubble[j+1] = temp
 
+inicioBubble = time.time()
 bubble(ArrayOrdenadoBubble)
 finBubble = time.time()
 print("El tiempo que tomó ordenar el arreglo de tamaño ",n," mediante el algoritmo BUBBLE SORT fue de ", finBubble-inicioBubble)
-print("La lista ordenada quedó así:")
-print(ArrayOrdenadoBubble)
+#print("La lista ordenada quedó así:")
+#print(ArrayOrdenadoBubble)
 
 ################ RADIX SORT ################
 ArrayOrdenadoRadix = Array
-inicioRadix = time.time()
 
 def counting_Sort(arr, p):
     s = len(arr)
@@ -149,7 +146,6 @@ def counting_Sort(arr, p):
     for i in range(0, s):
         arr[i] = result[i]
 
-
 #  radix sort
 def radix(arr):
     maximum = max(arr)
@@ -158,17 +154,16 @@ def radix(arr):
     while maximum // p > 0:
         counting_Sort(arr, p)
         p *= 10
-    
 
+inicioRadix = time.time()
 radix(ArrayOrdenadoRadix)    
 finRadix = time.time()
 print("El tiempo que tomó ordenar el arreglo de tamaño ",n," mediante el algoritmo RADIX SORT fue de ", finRadix-inicioRadix)
-print("La lista ordenada quedó así:")
-print(ArrayOrdenadoRadix)
+#print("La lista ordenada quedó así:")
+#print(ArrayOrdenadoRadix)
 
 ################ HEAP SORT ################
 ArrayOrdenadoHeap = Array
-inicioHeap = time.time()
 
 def heapify(arr, m, i):
     largest = i  # Initialize largest as root
@@ -207,15 +202,15 @@ def heap(arr):
         heapify(arr, i, 0)
   
 m = len(ArrayOrdenadoHeap)    
+inicioHeap = time.time()
 heap(ArrayOrdenadoHeap)
 finHeap = time.time()
 print("El tiempo que tomó ordenar el arreglo de tamaño ",n," mediante el algoritmo HEAP SORT fue de ", finHeap-inicioHeap)
-print("La lista ordenada quedó así:")
-print(ArrayOrdenadoHeap)
+#print("La lista ordenada quedó así:")
+#print(ArrayOrdenadoHeap)
 
 ################ INSERTION SORT ################
 ArrayOrdenadoInsert = Array
-inicioInsertion = time.time()
 
 def insertion(arr):
     # Traverse through 1 to len(arr)
@@ -232,8 +227,9 @@ def insertion(arr):
             j -= 1
         arr[j+1] = key
     
+inicioInsertion = time.time()
 insertion(ArrayOrdenadoInsert)
 finInsertion = time.time()
 print("El tiempo que tomó ordenar el arreglo de tamaño ",n," mediante el algoritmo INSERTION SORT fue de ", finInsertion-inicioInsertion)
-print("La lista ordenada quedó así:")
-print(ArrayOrdenadoInsert)
+#print("La lista ordenada quedó así:")
+#print(ArrayOrdenadoInsert)
